@@ -28,13 +28,17 @@ For pod to pod communication you can utilize the environment variable provided b
 
 To use reverse proxy add the front-end service ip address to `nginx.conf` file
 
-location /api {
+```
+location /api 
+{
     proxy_pass http://<ip-address>:port;
 }
+```
 
 but since the configuration run inside container ip address will not work properly so you should add pod to pod communication
 
+```
 location /api/ {
     proxy_pass http://tasks-service.default:8000;
 }
-
+```
