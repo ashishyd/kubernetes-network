@@ -42,3 +42,5 @@ location /api/ {
     proxy_pass http://tasks-service.default:8000;
 }
 ```
+## Architecture
+![Alt text](architecture.png "Architecture")
